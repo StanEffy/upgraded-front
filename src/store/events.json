@@ -1,0 +1,12 @@
+[
+  {
+    "img": "./img/test.jpg",
+    "title": "Fake title",
+    "date": "15 september, 2021",
+    "city": "",
+    "country": "Denmark",
+    "description": "Fake description",
+    "link": "https://www.nlsdays.com/registration-fees/",
+    "status": ""
+  }
+]
