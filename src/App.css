@@ -1,17 +1,3 @@
-@font-face {
-    font-family: "Avenir";
-    src: local("Avenir"), url("./assets/fonts/AvenirRegular.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "TiemposBold";
-    src: local("TiemposBold"), url("./assets/fonts/TiemposBold.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "TiemposRegular";
-    src: local("TiemposRegular"), url("./assets/fonts/TiemposRegular.otf") format("opentype");
-}
 
 html {
     scroll-behavior: smooth;
