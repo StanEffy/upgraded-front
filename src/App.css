@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Avenir";
-    src: url("./assets/fonts/AvenirRegular.otf") format("opentype");
+    src: local("Avenir"), url("./assets/fonts/AvenirRegular.otf") format("opentype");
 }
 
 @font-face {
     font-family: "TiemposBold";
-    src: url("./assets/fonts/TiemposBold.otf") format("opentype");
+    src: local("TiemposBold"), url("./assets/fonts/TiemposBold.otf") format("opentype");
 }
 
 @font-face {
     font-family: "TiemposRegular";
-    src: url("./assets/fonts/TiemposRegular.otf") format("opentype");
+    src: local("TiemposRegular"), url("./assets/fonts/TiemposRegular.otf") format("opentype");
 }
 
 html {
