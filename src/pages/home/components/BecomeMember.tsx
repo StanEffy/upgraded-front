@@ -12,11 +12,11 @@ const SectionStyled = styled.section`
   border-bottom: 1px solid white;
   overflow: hidden;
   position: relative;
-  
-  @media ${props => props.theme.screen.tablet}{
-    
+
+  @media ${props => props.theme.screen.tablet} {
+
   }
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     flex-direction: row;
     padding-left: 70px;
     padding-top: 172px;
@@ -24,10 +24,10 @@ const SectionStyled = styled.section`
 `
 const HeaderCover = styled.div`
   width: 100%;
-  @media ${props => props.theme.screen.tablet}{
+  @media ${props => props.theme.screen.tablet} {
     width: 50%;
   }
-  
+
 `
 const HeaderStyled = styled.h2`
   text-align: left;
@@ -42,43 +42,43 @@ const HeaderStyled = styled.h2`
   color: #ffffff;
   font-family: "TiemposBold", serif;
   text-shadow: 0px 2px 3px rgba(48, 66, 131, 0.6);
-  
-  @media ${props => props.theme.screen.tablet}{
+
+  @media ${props => props.theme.screen.tablet} {
     padding-left: 10px;
     font-size: 40px;
     max-width: none;
     width: 540px;
   }
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     font-size: 60px;
     line-height: 70px;
     padding-bottom: 82px;
     padding-left: 0;
     width: 640px;
   }
-  
- 
-  
+
+
+
 `
 
 const ButtonCover = styled.div`
   align-self: flex-end;
   margin-left: auto;
   padding-bottom: 70px;
-  
+
 `
 const ImageCover = styled.div`
   align-self: flex-end;
-  
+
   width: 340px;
   height: 328px;
-  
-  
-  @media ${props => props.theme.screen.tablet}{
+
+
+  @media ${props => props.theme.screen.tablet} {
     width: 90vw;
     height: 85vw;
   }
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     margin-left: auto;
     width: 640px;
     height: 617px;
@@ -87,7 +87,7 @@ const ImageCover = styled.div`
 
 const ImageStyled = styled.div`
   background-color: transparent;
-  border: none!important;
+  border: none !important;
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -99,12 +99,12 @@ const BecomeMember = () => {
         <SectionStyled>
             <HeaderCover>
                 <HeaderStyled>
-                Building bridges in <span style={{ color: 'rgb(237 53 86)' }}>healthtech</span> since 2012.
+                    Building bridges in <span style={{ color: 'rgb(237 53 86)' }}>healthtech</span> since 2012
                 </HeaderStyled>
-                <ButtonBecome />
+                <ButtonBecome/>
             </HeaderCover>
             <ImageCover>
-                    <ImageStyled />
+                <ImageStyled/>
             </ImageCover>
         </SectionStyled>
   )
