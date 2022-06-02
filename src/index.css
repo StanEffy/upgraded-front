@@ -10,15 +10,29 @@ body {
 
 @font-face {
     font-family: "Avenir";
-    src: local("Avenir"), url("./assets/fonts/AvenirRegular.woff2") format("woff2");
+    src: local("Avenir"),
+    url("./assets/fonts/AvenirRegular.woff2") format("woff2"),
+    url("./assets/fonts/AvenirRegular.ttf") format("truetype"),
+    url("./assets/fonts/AvenirRegular.otf") format("opentype"),
+    url("./assets/fonts/AvenirNextLTPro-Regular.eot") format("embedded-opentype")
+;
 }
 
 @font-face {
     font-family: "TiemposBold";
-    src: local("TiemposBold"), url("./assets/fonts/TiemposBold.woff2") format("woff2");
+    src: local("TiemposBold"),
+    url("./assets/fonts/TiemposBold.woff2") format("woff2"),
+    url("./assets/fonts/TiemposBold.ttf") format("truetype"),
+    url("./assets/fonts/TiemposBold.otf") format("opentype"),
+    url("./assets/fonts/TiemposHeadline-Bold.eot") format("embedded-opentype");
 }
 
 @font-face {
     font-family: "TiemposRegular";
-    src: local("TiemposRegular"), url("./assets/fonts/TiemposRegular.woff2") format("woff2");
+    src: local("TiemposRegular"),
+    url("./assets/fonts/TiemposRegular.woff2") format("woff2"),
+    url("./assets/fonts/TiemposRegular.ttf") format("truetype"),
+    url("./assets/fonts/TiemposRegular.otf") format("opentype"),
+    url("./assets/fonts/TiemposHeadline-Regular.eot") format("embedded-opentype")
+;
 }
