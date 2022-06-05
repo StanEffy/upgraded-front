@@ -12,11 +12,11 @@ const Section = styled.section`
 `
 
 const InnerCover = styled.div`
-  padding: 50px 20px 77px ;
+  padding: 50px 20px 77px;
   @media ${props => props.theme.screen.desktop} {
     padding: 110px 70px 130px ;
   }
-  background-color: rgba(255,255,255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 `
 const Header = styled.h2`
   color: ${props => props.theme.colors.blue};
@@ -25,16 +25,16 @@ const Header = styled.h2`
   font-size: 24px;
   line-height: 29px;
   font-family: "TiemposBold", serif;
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     margin-bottom: 72px;
-    font-size:48px;
+    font-size: 48px;
     line-height: 57px;
   }
 `
 const Form = styled.form`
   width: 100%;
   margin: 0 auto;
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     max-width: 760px;
   }
 `
@@ -45,7 +45,7 @@ const Input = styled.input`
   font-size: 11px;
   line-height: 13px;
   margin-bottom: 20px;
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     margin-bottom: 40px;
     padding: 40px 29px;
     font-size: 28px;
@@ -61,18 +61,20 @@ const ButtonStyled = styled.button`
   box-sizing: border-box;
   background-color: ${props => props.theme.colors.blue};
   color: #ffffff;
-  
+
   margin-top: 60px;
-  
+
   font-size: 11px;
   line-height: 13px;
-  &:hover{
+
+  &:hover {
     background-color: ${props => props.theme.colors.red};
   }
-  @media ${props => props.theme.screen.tablet}{
+
+  @media ${props => props.theme.screen.tablet} {
     display: block;
   }
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     margin-top: 68px;
     width: 250px;
     font-size: 21px;
@@ -86,7 +88,7 @@ const NewslettersForm = () => {
         <Section>
             <InnerCover>
                 <Header>Sign up for <br/>our newsletter</Header>
-                <Form>
+                <Form action="https://upgraded.us5.list-manage.com/subscribe/post" method={'POST'}>
                     <Input type={'text'} name={'name'} placeholder={'First name'}/>
                     <Input type={'text'} name={'last-name'} placeholder={'Last name'}/>
                     <Input type={'email'} name={'email'} placeholder={'Email'}/>

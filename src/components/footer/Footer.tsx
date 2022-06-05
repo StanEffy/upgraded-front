@@ -38,17 +38,17 @@ const FooterStyled = styled.footer`
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  
+
   justify-content: space-between;
   padding-bottom: 32px;
-  
-  
-  @media ${props => props.theme.screen.desktop}{
+
+
+  @media ${props => props.theme.screen.desktop} {
     padding: 40px 70px;
     flex-direction: row;
     flex-wrap: wrap;
-    
-    div:nth-child(3){
+
+    div:nth-child(3) {
       padding-top: 31px;
     }
   }
@@ -70,7 +70,7 @@ const FooterLinksList = styled.ul`
   padding-bottom: 40px;
 `
 const FooterLinksListItem = styled.li`
-    display: flex;
+  display: flex;
 `
 const FooterNav = styled.nav`
   padding-top: 20px;
@@ -85,10 +85,12 @@ const FooterNavlink = styled(NavLink)`
   text-decoration: none;
   flex-grow: 1;
   text-align: left;
+
   &:visited {
     color: #ffffff;
   }
-  &:hover{
+
+  &:hover {
     color: ${props => props.theme.colors.red};
   }
 `
@@ -111,18 +113,18 @@ const FooterMiniText = styled.p`
   text-align: left;
   padding-left: 20px;
 
-  @media ${props => props.theme.screen.tablet}{
+  @media ${props => props.theme.screen.tablet} {
     margin-top: auto;
   }
 `
 const FooterSocialList = styled.ul`
-list-style: none;
-margin: 0;
-padding: 0;
-display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
   padding-left: 20px;
-flex-direction: row;
-margin-bottom: 50px;
+  flex-direction: row;
+  margin-bottom: 50px;
 `
 
 const FooterSocialItem = styled.li`
@@ -135,9 +137,11 @@ const FooterSocialLink = styled.a`
   width: 32px;
   height: 32px;
   display: inline-block;
+
   & img {
     padding-top: 3px;
   }
+
   &:hover {
     background-color: ${props => props.theme.colors.red};
   }
@@ -147,6 +151,7 @@ const FooterAddress = styled.div`
   display: flex;
   padding-left: 20px;
   margin-top: 40px;
+
   img {
     padding-top: 1px;
     width: 57px;
@@ -159,17 +164,17 @@ const FooterAddressParagraph = styled.p`
   font-size: 12px;
   line-height: 18px;
 
-  
+
 `
 const FooterHeader = styled.h3`
   font-weight: normal;
   text-align: left;
-  
+
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
   margin: 0;
-  
+
 `
 const FooterMoto = styled.p`
   margin: 0;
@@ -178,30 +183,30 @@ const FooterMoto = styled.p`
   text-align: left;
   font-size: 8px;
   line-height: 10px;
-  @media ${props => props.theme.screen.tablet}{
+  @media ${props => props.theme.screen.tablet} {
     font-size: 14px;
     line-height: 16px;
-    
+
   }
 `
 const FooterLogoCover = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
-  
+
+
 `
 const FooterNewsletter = styled.div`
-display: flex;
+  display: flex;
 `
 const FooterNewsletterParagraph = styled.p`
-margin: 0;
+  margin: 0;
 `
 const NewsletterCover = styled.div`
 
 `
 const NewsletterForm = styled.form`
-    height: 40px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   padding-left: 20px;
@@ -210,18 +215,28 @@ const NewsletterForm = styled.form`
 `
 const NewsletterInput = styled.input`
   padding-left: 10px;
-    `
-const NewsletterSend = styled.button`
+`
+const NewsletterSend = styled.a`
   border: 1px solid #ffffff;
   color: #ffffff;
   background-color: ${props => props.theme.colors.blue};
   padding: 10px 20px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: ${props => props.theme.colors.red};
+  }
+
+  &:visited {
+    color: white;
+  }
 `
 const FooterReachUs = styled.div`
   display: flex;
   padding-left: 20px;
   margin-top: 20px;
   margin-bottom: 60px;
+
   img {
     padding-top: 1px;
     width: 57px;
@@ -232,6 +247,7 @@ const FooterReachUs = styled.div`
 const ReachInnerCover = styled.div`
   display: flex;
   flex-direction: column;
+
   p {
     position: relative;
     left: -7px;
@@ -257,26 +273,31 @@ const FooterBottom = styled.div`
   line-height: 10px;
   text-align: left;
   padding: 0 24px;
-  div:first-child{
+
+  div:first-child {
     display: none;
   }
-  div{
+
+  div {
     width: 50%;
   }
-  & div:last-of-type{
-     text-align: right;
-   }
-  @media ${props => props.theme.screen.desktop}{
+
+  & div:last-of-type {
+    text-align: right;
+  }
+
+  @media ${props => props.theme.screen.desktop} {
     width: 100%;
     padding: 0;
     text-align: center;
-    div:first-child{
+    div:first-child {
       display: block;
     }
-    div{
+
+    div {
       width: 33%;
     }
-    
+
   }
 `
 const Footer = () => {
@@ -285,7 +306,7 @@ const Footer = () => {
             <FooterBlockStyled>
                 <FooterLogoCover>
                     <FooterNavlink to={'/'}>
-                        <FooterLogo src={'./img/logo/logo_white.png'} />
+                        <FooterLogo src={'./img/logo/logo_white.png'}/>
                     </FooterNavlink>
                     <FooterMoto>
                         No good health innovation should be lost
@@ -335,11 +356,11 @@ const Footer = () => {
                     <FooterSocialList>
                         {socialDescription.map(socialItem => {
                           return (
-                                    <FooterSocialItem key={socialItem.name}>
-                                        <FooterSocialLink href={socialItem.link} target={'_blank'}>
-                                            <img src={socialItem.img} alt={`Our page on ${socialItem.name}`} width={24}/>
-                                        </FooterSocialLink>
-                                    </FooterSocialItem>
+                                <FooterSocialItem key={socialItem.name}>
+                                    <FooterSocialLink href={socialItem.link} target={'_blank'}>
+                                        <img src={socialItem.img} alt={`Our page on ${socialItem.name}`} width={24}/>
+                                    </FooterSocialLink>
+                                </FooterSocialItem>
                           )
                         })
                         }
@@ -355,7 +376,9 @@ const Footer = () => {
                     </FooterMoto>
                     <NewsletterForm>
                         <NewsletterInput placeholder={'Email'}/>
-                        <NewsletterSend>SUBSCRIBE</NewsletterSend>
+                        <NewsletterSend
+                            target={'_blank'}
+                            href={'https://upgraded.us5.list-manage.com/subscribe?u=103e1482ca6ba7daba7272565&id=ca8b9b7d29'}>SUBSCRIBE</NewsletterSend>
                     </NewsletterForm>
                 </NewsletterCover>
 
