@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import routes from '../../utils/routes'
 import { NavLink, useLocation } from 'react-router-dom'
+import { NavHashLink } from 'react-router-hash-link'
 
 type Props = {
     linkNames: {
@@ -14,7 +15,7 @@ const HeaderStyled = styled.header`
   background-color: ${props => props.theme.colors.blue};
   position: fixed;
   //I know z-index shouldn't be this high, but otherwise arrows on slider mess it all up
-  z-index:9999;
+  z-index: 9999;
   width: 100%;
   max-width: 1920px;
   top: 0;
@@ -27,17 +28,19 @@ const NavStyled = styled.nav`
   //padding-top: 15px;
   //
   align-items: center;
+
   img {
     width: 152px;
     height: 34px;
   }
-  @media ${props => props.theme.screen.desktop}{
+
+  @media ${props => props.theme.screen.desktop} {
     padding: 0px 60px;
     img {
-    width: 290px;
-    height: 65px;
-  }
-    
+      width: 290px;
+      height: 65px;
+    }
+
   }
 `
 const ListStyled = styled.ul`
@@ -50,13 +53,13 @@ const ListStyled = styled.ul`
   list-style: none;
   padding: 0;
 
-  @media ${props => props.theme.screen.tablet}{
+  @media ${props => props.theme.screen.tablet} {
     position: static;
     background-color: transparent;
     width: auto;
     display: flex;
     flex-direction: row;
-    
+
   }
 
 `
@@ -65,7 +68,7 @@ const ListItem = styled.li`
   font-family: "Avenir", sans-serif;
   position: relative;
   box-sizing: border-box;
- 
+
   & ul {
     display: none;
     border: 1px solid ${props => props.theme.colors.red};
@@ -100,28 +103,31 @@ const SubRoutesList = styled.ul`
   background-color: rgba(48, 66, 131, 0.7);
   padding: 20px;
   top: 58px;
-  & a{
+
+  & a {
     display: inline-block;
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
     padding: 10px 20px;
     text-align: left;
-    &:visited{
+
+    &:visited {
       color: #ffffff;
     }
+
     &:hover,
-    &:focus{
+    &:focus {
       color: ${props => props.theme.colors.red};
     }
   }
-  
-  @media ${props => props.theme.screen.tablet}{
-  & a {
-    min-width: 200px;
+
+  @media ${props => props.theme.screen.tablet} {
+    & a {
+      min-width: 200px;
+    }
   }
-} 
-  @media (min-width: 1105px){
+  @media (min-width: 1105px) {
     top: 84px;
   }
 `
@@ -129,8 +135,8 @@ const NavCrutch = styled.div`
   width: 40px;
   height: 40px;
   display: none;
-  @media ${props => props.theme.screen.tablet}{
-    
+  @media ${props => props.theme.screen.tablet} {
+
   }
 `
 const NavToggle = styled.button`
@@ -141,16 +147,15 @@ const NavToggle = styled.button`
   left: 13px;
   box-sizing: border-box;
   background-color: transparent;
-  
+
   margin-top: 10px;
   border: none;
-  
+
   display: flex;
-  
-  display: flex;
+
   flex-direction: column;
   justify-content: center;
-  @media ${props => props.theme.screen.tablet}{
+  @media ${props => props.theme.screen.tablet} {
     display: none;
   }
 `
@@ -168,36 +173,38 @@ const NavToggleBottomLine = styled(NavToggleTopLine)`
 
 `
 const MobileMenu = styled.ul`
-  background-color:${props => props.theme.colors.blue};
+  background-color: ${props => props.theme.colors.blue};
   position: absolute;
   width: 100%;
   box-sizing: border-box;
-  
+
   height: 100vh;
   margin: 0;
   padding: 0;
-  
+
   padding-top: 40px;
   left: 0;
   top: 50px;
   list-style: none;
   text-align: left;
   padding-left: 40px;
+
   a {
     text-align: left;
   }
 `
 const ListItemMobile = styled.li`
- 
+
   padding-right: 25px;
 `
 const SubRoutesListMobile = styled.ul`
-   list-style: none;
+  list-style: none;
   margin: 0;
   padding: 0;
   text-align: left;
   margin-bottom: 35px;
-  a, a:visited{
+
+  a, a:visited {
     color: #ffffff;
     text-decoration: none;
     display: inline-block;
@@ -205,7 +212,8 @@ const SubRoutesListMobile = styled.ul`
     font-size: 16pt;
     width: 100%;
   }
-  li{
+
+  li {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -218,15 +226,15 @@ const MobileNavLink = styled(NavLink)`
 const MobileArrowMenu = styled.div`
   width: 50%;
   height: 40px;
-  
+
   box-sizing: border-box;
 
-  
+
 `
 const Arrow = styled.div`
   height: 40px;
   width: 40px;
-  
+
   box-sizing: border-box;
   background-image: url("./img/home-page/arrow.png");
   margin-left: auto;
@@ -238,7 +246,7 @@ const MobileNavLinkCover = styled.div`
   flex-direction: row;
   margin-bottom: 35px;
 `
-const Header:React.FC<Props> = ({ linkNames, theme }) => {
+const Header: React.FC<Props> = ({ linkNames, theme }) => {
   const [isMenuOpened, toggleMenuOpened] = useState(false)
   const [menuName, setMenuName] = useState(null)
 
@@ -255,7 +263,7 @@ const Header:React.FC<Props> = ({ linkNames, theme }) => {
     logoColor = 'blue'
   }
 
-  const clickArrowHandler = (activeMenuName:any) => {
+  const clickArrowHandler = (activeMenuName: any) => {
     if (activeMenuName === menuName) setMenuName(null)
     else {
       setMenuName(activeMenuName)
@@ -268,37 +276,44 @@ const Header:React.FC<Props> = ({ linkNames, theme }) => {
   return (
         <HeaderStyled className={activeClassName}>
             <NavStyled>
-                <NavCrutch />
+                <NavCrutch/>
                 <NavLink className={'main-nav-link main-nav-link--logo'} to={'/'}>
-                    <img className={'main-nav--logo'} src={`./img/logo/logo_${logoColor}.png`} width={'290'} height={'65'}/>
+                    <img className={'main-nav--logo'} src={`./img/logo/logo_${logoColor}.png`} width={'290'}
+                         height={'65'}/>
                 </NavLink>
                 <ListStyled className={'mobileMenuHidden'}>
-                    {routes.map(route => <ListItem key={route.linkName} className={`${route.linkName}` }>
-                        <NavLink className={'main-nav-link'} onClick={() => toggleMenuOpened(false)} to={route.route}>{route.linkName}</NavLink>
+                    {routes.map(route => <ListItem key={route.linkName} className={`${route.linkName}`}>
+                            <NavLink className={'main-nav-link'} onClick={() => toggleMenuOpened(false)}
+                                     to={route.route}>{route.linkName}</NavLink>
                             {route.subRoutes
                               ? <SubRoutesList className={route.linkName}>
-                                {route.subRoutes.map(sub => {
-                                  return <li key={`sub-${route.linkName}`}>
-                                      <NavLink to={sub[1]} onClick={() => console.log('CLICKED')}>{sub[0]}</NavLink>
-                                    </li>
-                                })}
+                                    {route.subRoutes.map(sub => {
+                                      return <li key={`sub-${route.linkName}`}>
+                                            {route.linkName === 'about us'
+                                              ? <NavHashLink smooth to={sub[1]}>{sub[0]}</NavHashLink>
+                                              : <NavLink to={sub[1]}>{sub[0]}</NavLink>}
+                                        </li>
+                                    })}
                                 </SubRoutesList>
                               : null
 
-                                 }
-                    </ListItem>
+                            }
+                        </ListItem>
                     )}
                 </ListStyled>
                 <MobileMenu className={isMenuOpened ? 'mobileMenu' : 'mobileMenuHidden'}>
                     {routes.map(route => <ListItemMobile key={route.linkName} className={`${route.linkName}`}>
                             <MobileNavLinkCover>
-                                <MobileNavLink className={'main-nav-link--mobile'} to={route.route}>{route.linkName}</MobileNavLink>
-                                <MobileArrowMenu className={(menuName === route.linkName) ? 'mobile-menu--arrow-down' : ''} onClick={() => clickArrowHandler(route.linkName)}>
-                                    <Arrow />
+                                <MobileNavLink className={'main-nav-link--mobile'}
+                                               to={route.route}>{route.linkName}</MobileNavLink>
+                                <MobileArrowMenu className={(menuName === route.linkName) ? 'mobile-menu--arrow-down' : ''}
+                                                 onClick={() => clickArrowHandler(route.linkName)}>
+                                    <Arrow/>
                                 </MobileArrowMenu>
                             </MobileNavLinkCover>
                             {route.subRoutes
-                              ? <SubRoutesListMobile className={(menuName === route.linkName) ? '' : 'mobile--sub-menu__hidden'}>
+                              ? <SubRoutesListMobile
+                                    className={(menuName === route.linkName) ? '' : 'mobile--sub-menu__hidden'}>
                                     {route.subRoutes.map(sub => {
                                       return <li key={`sub-${route.linkName}`}>
                                             <NavLink onClick={() => closeMenu()} to={sub[1]}>{sub[0]}</NavLink>
@@ -311,7 +326,9 @@ const Header:React.FC<Props> = ({ linkNames, theme }) => {
                         </ListItemMobile>
                     )}
                 </MobileMenu>
-                <NavToggle className={isMenuOpened ? 'buttonCross' : ''} onClick={() => toggleMenuOpened(!isMenuOpened)}><NavToggleTopLine /> <NavToggleMidLine /> <NavToggleBottomLine /></NavToggle>
+                <NavToggle className={isMenuOpened ? 'buttonCross' : ''}
+                           onClick={() => toggleMenuOpened(!isMenuOpened)}><NavToggleTopLine/> <NavToggleMidLine/>
+                    <NavToggleBottomLine/></NavToggle>
             </NavStyled>
         </HeaderStyled>
   )
