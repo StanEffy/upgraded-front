@@ -305,9 +305,11 @@ const Header: React.FC<Props> = ({ linkNames, theme }) => {
                     {routes.map(route => <ListItemMobile key={route.linkName} className={`${route.linkName}`}>
                             <MobileNavLinkCover>
                                 <MobileNavLink className={'main-nav-link--mobile'}
-                                               to={route.route}>{route.linkName}</MobileNavLink>
-                                <MobileArrowMenu className={(menuName === route.linkName) ? 'mobile-menu--arrow-down' : ''}
-                                                 onClick={() => clickArrowHandler(route.linkName)}>
+                                               to={route.route} onClick={() => closeMenu()}>{route.linkName}</MobileNavLink>
+                                <MobileArrowMenu
+                                    className={(menuName === route.linkName) ? 'mobile-menu--arrow-down' : ''}
+                                    onClick={() => clickArrowHandler(route.linkName)}>
+                                    {console.log(route.linkName)}
                                     <Arrow/>
                                 </MobileArrowMenu>
                             </MobileNavLinkCover>

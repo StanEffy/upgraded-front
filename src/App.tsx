@@ -32,55 +32,59 @@ import Newsletter from './pages/admin-panel/Newsletter'
 import EcomapsAdmin from './pages/admin-panel/Ecomaps'
 import ImportantLinks from './pages/info-bank/important-links/ImportantLinks'
 import SingleEvent from './pages/info-bank/eventscalendar/singleevent/SingleEvent'
+import Community from './pages/community/Community'
 
 // structure of routes file should be refactored
 //
 
 function App () {
   return (
-    <div className="App" >
-      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <Header linkNames={routes} />
-            <ScrollToTop />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about-us" element={<AboutUs />} />
-                <Route path="/partners" element={<Partners />} />
-                <Route path="/startup-members" element={<Startups />} />
-                <Route path="/investor" element={<Investors />} />
-                <Route path="/contact-us" element={<ContactUs />} />
-                <Route path="/newsletters" element={<Newsletters />} />
+        <div className="App">
+            <ThemeProvider theme={theme}>
+                <BrowserRouter>
+                    <Header linkNames={routes}/>
+                    <ScrollToTop/>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/about-us" element={<AboutUs/>}/>
+                        <Route path="/community" element={<Community/>}/>
+                        <Route path="/info-bank" element={<Community/>}/>
 
-                <Route path="/news-and-stories" element={<NewsAndStories />} />
-                <Route path="/news-and-stories/:title" element={<NewsAndStories />} />
+                        <Route path="/partners" element={<Partners/>}/>
+                        <Route path="/startup-members" element={<Startups/>}/>
+                        <Route path="/investor" element={<Investors/>}/>
+                        <Route path="/contact-us" element={<ContactUs/>}/>
+                        <Route path="/newsletters" element={<Newsletters/>}/>
 
-                <Route path="/insights" element={<Insights />} />
+                        <Route path="/news-and-stories" element={<NewsAndStories/>}/>
+                        <Route path="/news-and-stories/:title" element={<NewsAndStories/>}/>
 
-                <Route path="/eventcalendar" element={<EventCalendar />} />
-                <Route path="/eventcalendar/:title" element={<SingleEvent />} />
+                        <Route path="/insights" element={<Insights/>}/>
 
-                <Route path="/important-links" element={<ImportantLinks />}/>
+                        <Route path="/eventcalendar" element={<EventCalendar/>}/>
+                        <Route path="/eventcalendar/:title" element={<SingleEvent/>}/>
 
-                <Route path="/ecomaps" element={<EcosystemMaps/>} />
-                <Route path="/ecomaps/:name" element={<OneMap />} />
+                        <Route path="/important-links" element={<ImportantLinks/>}/>
 
-                <Route path="*" element={<ErrorPage />} />
+                        <Route path="/ecomaps" element={<EcosystemMaps/>}/>
+                        <Route path="/ecomaps/:name" element={<OneMap/>}/>
 
-                    <Route path={adminRoutes.home} element={<HomePage />} />
-                    <Route path={adminRoutes.partners} element={<PartnersAdmin />} />
-                    <Route path={adminRoutes.news} element={<News />} />
-                    <Route path={adminRoutes.events} element={<Events />} />
-                    <Route path={adminRoutes.team} element={<Team />} />
-                    <Route path={adminRoutes.newsletter} element={<Newsletter />} />
-                    <Route path={adminRoutes.ecomaps} element={<EcomapsAdmin />} />
+                        <Route path="*" element={<ErrorPage/>}/>
 
-            </Routes>
-            <Footer />
+                        <Route path={adminRoutes.home} element={<HomePage/>}/>
+                        <Route path={adminRoutes.partners} element={<PartnersAdmin/>}/>
+                        <Route path={adminRoutes.news} element={<News/>}/>
+                        <Route path={adminRoutes.events} element={<Events/>}/>
+                        <Route path={adminRoutes.team} element={<Team/>}/>
+                        <Route path={adminRoutes.newsletter} element={<Newsletter/>}/>
+                        <Route path={adminRoutes.ecomaps} element={<EcomapsAdmin/>}/>
 
-        </BrowserRouter>
-      </ThemeProvider>
-    </div>
+                    </Routes>
+                    <Footer/>
+
+                </BrowserRouter>
+            </ThemeProvider>
+        </div>
   )
 }
 

@@ -56,7 +56,9 @@ const ButtonSubmit = styled.button`
   color: #ffffff;
   padding: 12px 17px;
   text-align: center;
+  text-transform: uppercase;
   margin-top: 30px;
+  border-color: transparent;
   background-color: ${props => props.theme.colors.blue};
   @media ${props => props.theme.screen.desktop} {
     margin-top: 44px;

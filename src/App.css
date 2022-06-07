@@ -199,6 +199,10 @@ body {
 
 }
 
+.mobile-menu--arrow-down:last-of-type {
+    display: none;
+}
+
 .mobile-menu--arrow-down div {
     transform: rotate(90deg);
     background-position: center;
@@ -347,4 +351,14 @@ body {
 .knowledge-list__opened:after {
     transform: rotate(90deg);
     top: 15px !important;
+}
+
+/*History slider active state*/
+.history-slide__active:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 6px;
+    top: -31px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
