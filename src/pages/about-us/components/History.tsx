@@ -8,9 +8,6 @@ const SectionHistory = styled.section`
 
   //  temporary
   height: 100vw;
-  //display: flex;
-  //justify-content: center;
-  //align-items: center;
   //  
 
   background-image: url("./img/about-us/history.jpg");

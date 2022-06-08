@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 type HistoryYear = {
     year: string | number,
-    events: string[]
+    events: string[],
+    index: number
 }
 type Props = {
     history: Array<HistoryYear>,
@@ -97,24 +98,84 @@ const YearItself = styled.p`
 const YearEvents = styled.ul`
   margin: 0;
   padding: 0;
+  font-size: 10px;
+  line-height: 12px;
+  max-width: 320px;
+
+  li {
+    margin-bottom: 15px;
+  }
+
+  @media ${props => props.theme.screen.desktop} {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
 `
 const HistorySlider: React.FC<Props> = ({ history }) => {
   const [activeSlide, setActiveSlider] = useState(0)
 
-  const historyLength = history.length
+  const [slidesAmount, setSlidesAmount] = useState(1)
+
+  const [arrayDimensions, setArrayDimensions] = useState({
+    start: 0,
+    end: slidesAmount
+  })
+
+  const historyTrunc = history.slice(arrayDimensions.start, arrayDimensions.end)
+
+  const [windowDimenion, detectHW] = useState({
+    winWidth: window.innerWidth,
+    winHeight: window.innerHeight
+  })
+
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight
+    })
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', detectSize)
+
+    if (windowDimenion.winWidth >= 1200) {
+      setSlidesAmount(5)
+      setArrayDimensions({ start: 0, end: 5 })
+    } else if (windowDimenion.winWidth >= 992) {
+      setSlidesAmount(3)
+      setArrayDimensions({ start: 0, end: 3 })
+    } else if (windowDimenion.winWidth >= 768) {
+      setSlidesAmount(2)
+      setArrayDimensions({ start: 0, end: 2 })
+    } else {
+      setSlidesAmount(1)
+      setArrayDimensions({ start: 0, end: 1 })
+    }
+    return () => {
+      window.removeEventListener('resize', detectSize)
+    }
+  }, [windowDimenion])
 
   const increaseSlider = () => {
-    (activeSlide + 1) < historyLength
-      ? setActiveSlider(activeSlide + 1)
-      : console.log('You have reached the end of' +
-                ' history')
-    console.log(historyLength, activeSlide)
+    if (activeSlide < history.length - 1) {
+      if (activeSlide + 1 === arrayDimensions.end) {
+        setArrayDimensions({ start: activeSlide + 1, end: activeSlide + 1 + slidesAmount })
+      }
+      setActiveSlider(activeSlide + 1)
+    } else {
+      console.log('You have reached the end of history')
+    }
+    console.log(activeSlide, arrayDimensions.end)
   }
   const decreaseSlider = () => {
-    activeSlide > 0
-      ? setActiveSlider(activeSlide - 1)
-      : console.log('Upgraded has not existed yet')
-    console.log(historyLength, activeSlide)
+    if (activeSlide > 0) {
+      if (activeSlide - 1 < arrayDimensions.start) {
+        const start = activeSlide - 1 - slidesAmount > 0 ? activeSlide - 1 - slidesAmount : 0
+        setArrayDimensions({ start: start, end: activeSlide })
+      }
+      setActiveSlider(activeSlide - 1)
+    }
   }
   return (
         <SliderCover>
@@ -128,9 +189,9 @@ const HistorySlider: React.FC<Props> = ({ history }) => {
             </SliderControllersCover>
             <SliderHistoryCover>
                 <HistoryYearList>
-                    {history.map((y, yearIndex) =>
+                    {historyTrunc.map((y) =>
                         <HistoryYearItem key={y.year}
-                                         className={yearIndex === activeSlide ? 'history-slide__active' : ''}>
+                                         className={y.index === activeSlide ? 'history-slide__active' : ''}>
                             <YearItself>
                                 {y.year}
                             </YearItself>

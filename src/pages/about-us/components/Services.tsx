@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+
 const ServicesSection = styled.section`
 
 `
 const SectionHeader = styled.h2`
   color: ${props => props.theme.colors.blue};
   font-size: 24px;
-  line-height: 29px; 
+  line-height: 29px;
   margin-bottom: 30px;
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     font-size: 48px;
     line-height: 57px;
     margin-bottom: 30px;
@@ -23,20 +24,21 @@ const SectionSubheader = styled.p`
   color: ${props => props.theme.colors.red};
   width: 171px;
   margin: 0 auto;
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     width: 480px;
     margin: 0 auto;
     font-size: 28px;
     line-height: 34px;
-    
+
   }
 `
 const CardsCover = styled.div`
   margin-top: 65px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-bottom: 120px;
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 260px;
@@ -44,20 +46,20 @@ const CardsCover = styled.div`
 `
 const SectionCard = styled.article`
   color: ${props => props.theme.colors.blue};
-  
-  @media ${props => props.theme.screen.tablet}{
+
+  @media ${props => props.theme.screen.tablet} {
     max-width: 496px;
     padding: 0 30px;
     padding-bottom: 55px;
-    &:hover{
-      -webkit-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.23);
-      box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.23);
+    &:hover {
+      -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.23);
+      box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.23);
       background-color: #ffffff;
     }
   }
-  @media ${props => props.theme.screen.desktop}{
-    
-    &:first-child{
+  @media ${props => props.theme.screen.desktop} {
+
+    &:first-child {
       margin-right: 60px;
     }
   }
@@ -67,18 +69,18 @@ const CardImage = styled.img`
   height: 94px;
   margin-bottom: 30px;
   margin-top: 30px;
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     width: 150px;
     height: 126px;
   }
 `
 const CardHeader = styled.h2`
-font-family: "TiemposBold";
+  font-family: "TiemposBold";
   font-size: 19px;
-  @media ${props => props.theme.screen.tablet}{
+  @media ${props => props.theme.screen.tablet} {
     font-size: 36px;
   }
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     font-size: 48px;
     line-height: 58px;
   }
@@ -89,10 +91,10 @@ const CardParagraph = styled.p`
   width: 210px;
   margin: 0 auto;
   margin-bottom: 60px;
-  @media ${props => props.theme.screen.tablet}{
+  @media ${props => props.theme.screen.tablet} {
     width: auto;
   }
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     font-size: 21px;
     line-height: 30px;
     min-height: 120px;
@@ -109,16 +111,19 @@ const CardButton = styled(NavLink)`
   line-height: 14px;
   color: #ffffff;
   text-decoration: none;
-  &:visited{
+
+  &:visited {
     color: #ffffff;
   }
-  &:hover{
+
+  &:hover {
     background-color: ${props => props.theme.colors.red};
   }
-  @media ${props => props.theme.screen.desktop}{
-  padding: 18px 47px;
-  font-size: 21px;
-  line-height: 26px;
+
+  @media ${props => props.theme.screen.desktop} {
+    padding: 18px 47px;
+    font-size: 21px;
+    line-height: 26px;
 
   }
 `
@@ -147,7 +152,8 @@ const Services = () => {
                         FOR PARTNERS
                     </CardHeader>
                     <CardParagraph>
-                        Ally with us, and we will introduce you to the world of health innovation, and co-create projects together, whether it´s events, research, or scouting for solutions
+                        Ally with us, and we will introduce you to the world of health innovation, and co-create
+                        projects together, whether it´s events, research, or scouting for solutions
                     </CardParagraph>
                     <CardButton to={'/'}>Read more</CardButton>
                 </SectionCard>
