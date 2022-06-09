@@ -70,7 +70,7 @@ const History = () => {
                     focusing on startups and innovations. We felt the need to
                     build an event where both startups and other health
                     industry players could meet, get insights and create the
-                    future of health together
+                    future of health together.
                 </SectionParagraph>
                 <HistorySlider history={historyArray}/>
             </InnerCover>
