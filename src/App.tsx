@@ -34,6 +34,16 @@ import ImportantLinks from './pages/info-bank/important-links/ImportantLinks'
 import SingleEvent from './pages/info-bank/eventscalendar/singleevent/SingleEvent'
 import Community from './pages/community/Community'
 
+import '@aws-amplify/ui-react/styles.css'
+import {
+  withAuthenticator,
+  Button,
+  Heading,
+  Image,
+  View,
+  Card
+} from '@aws-amplify/ui-react'
+import Admin from './pages/Admin'
 // structure of routes file should be refactored
 //
 
@@ -70,6 +80,9 @@ function App () {
                         <Route path="/ecomaps/:name" element={<OneMap/>}/>
 
                         <Route path="*" element={<ErrorPage/>}/>
+
+                        <Route path={adminRoutes.admin} element={<Admin signOut={() => {
+                        }}/>}/>
 
                         <Route path={adminRoutes.home} element={<HomePage/>}/>
                         <Route path={adminRoutes.partners} element={<PartnersAdmin/>}/>

@@ -1,5 +1,6 @@
 export default {
-  home: '/admin',
+  admin: '/admin',
+  home: '/admin/home',
   news: '/admin/news',
   events: '/admin/events',
   partners: '/admin/partners',
