@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "upgradedfront5d8180c8": {}
+        "upgradedfront5d8180c8": {},
+        "true": {}
       }
     }
   }
