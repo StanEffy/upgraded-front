@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BenefitsSlider from './BenefitsSlider'
+
 const SectionStyled = styled.section`
   background-color: #f9f9f9;
   padding-top: 60px;
@@ -11,23 +12,23 @@ const SectionStyled = styled.section`
 `
 const HeaderSecondary = styled.h2`
   color: ${props => props.theme.colors.red};
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 29px;
   max-width: 270px;
   margin: 0 auto;
   margin-bottom: 75px;
-  font-family: "TiemposBold", serif;  
-  @media ${props => props.theme.screen.desktop}{
+  font-family: "TiemposBold", serif;
+  @media ${props => props.theme.screen.desktop} {
     font-size: 48px;
     line-height: 58px;
-    max-width: 530px; 
+    max-width: 530px;
     margin-bottom: 140px;
   }
-  
+
 `
 const HeaderMain = styled.h1`
   font-family: "TiemposRegular", serif;
-  font-size: 23px;
+  font-size: 1.5rem;
   line-height: 30px;
   color: ${props => props.theme.colors.blue};
   max-width: 270px;
@@ -44,31 +45,31 @@ const HeaderMain = styled.h1`
 `
 const PriceParagraph = styled.p`
   font-family: "TiemposRegular", serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 30px;
   color: ${props => props.theme.colors.blue};
   max-width: 270px;
   margin: 0 auto;
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     margin: 0;
     text-align: left;
     max-width: 530px;
-    font-size: 24px;
-    line-height: 48px;
+    font-size: 1.5rem;
+    line-height: 2rem;
     padding-left: 65px;
   }
 `
 const ParagraphInstructions = styled.p`
   display: none;
-  @media ${props => props.theme.screen.desktop}{
+  @media ${props => props.theme.screen.desktop} {
     display: block;
     color: ${props => props.theme.colors.blue};
     font-family: "TiemposRegular", serif;
     padding-left: 65px;
-    font-size: 24px;
-    line-height: 48px;
+    font-size: 1rem;
+    line-height: 2rem;
     text-align: left;
-   
+
   }
 `
 const Benefits = () => {
@@ -79,7 +80,7 @@ const Benefits = () => {
             <HeaderMain>Become a Value Ally</HeaderMain>
             <PriceParagraph>Price: depending on the complexity
                 of the project.</PriceParagraph>
-            <BenefitsSlider />
+            <BenefitsSlider/>
             <ParagraphInstructions>Become a Value Ally now by filling in the form!</ParagraphInstructions>
         </SectionStyled>
   )
