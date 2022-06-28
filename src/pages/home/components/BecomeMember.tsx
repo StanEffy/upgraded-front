@@ -45,7 +45,8 @@ const HeaderStyled = styled.h2`
 
   @media ${props => props.theme.screen.tablet} {
     padding-left: 10px;
-    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 3rem;
     max-width: none;
     width: 540px;
   }
@@ -74,11 +75,12 @@ const ImageCover = styled.div`
   height: 328px;
 
 
+    // @media ${props => props.theme.screen.tablet} {
+  //   width: 90vw;
+  //   height: 85vw;
+  //   margin-left: auto;
+  // }
   @media ${props => props.theme.screen.tablet} {
-    width: 90vw;
-    height: 85vw;
-  }
-  @media ${props => props.theme.screen.desktop} {
     margin-left: auto;
     width: 640px;
     height: 617px;
@@ -93,6 +95,9 @@ const ImageStyled = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("./img/home-page/health100.png");
+  @media ${props => props.theme.screen.desktop} {
+    background-position: bottom;
+  }
 `
 const BecomeMember = () => {
   return (

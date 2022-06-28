@@ -140,6 +140,19 @@ const NumbersCover = styled(NavLink)`
 
 }
 
+@media ${props => props.theme.screen.tablet} {
+  &:nth-child(1) {
+
+    margin-left: auto;
+  }
+
+  &:nth-child(2) {
+
+    margin-right: auto;
+    margin-left: 180px;
+  }
+}
+
 @media ${props => props.theme.screen.desktop} {
   //padding: 0 70px;
   margin-bottom: 40px;
@@ -160,7 +173,7 @@ const NumbersCover = styled(NavLink)`
   &:nth-child(2) {
 
     margin-right: auto;
-    margin-left: 180px;
+
   }
 }
 
@@ -190,10 +203,20 @@ const NumberStyled = styled.p`
   height: 260px;
   text-align: center;
   box-sizing: border-box;
-  padding-top: 102px;
+  padding-top: 98px;
   margin: 0;
+  @media ${props => props.theme.screen.tablet} {
+    padding-top: 58px;
+    width: 180px;
+    height: 180px;
+  }
+
   @media ${props => props.theme.screen.desktop} {
+    width: 260px;
+    height: 260px;
+    padding-top: 98px;
     font-size: 54px;
+    padding-top: 88px;
   }
 `
 
